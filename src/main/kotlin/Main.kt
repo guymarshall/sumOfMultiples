@@ -1,7 +1,20 @@
 fun main(args: Array<String>) {
-    println("Hello World!")
+    print("Enter the first multiple: ")
+    var firstMultiple: Int = readln().toInt()
 
-    // If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
-    //
-    //Find the sum of all the multiples of 3 or 5 below 1000.
+    print("Enter the second multiple: ")
+    var secondMultiple: Int = readln().toInt()
+
+    print("Enter the maximum number to check: ")
+    var maximumNumber: Int = readln().toInt()
+
+    var sum = 0
+
+    for (number in 1 until maximumNumber) {
+        if (number % firstMultiple == 0 || number % secondMultiple == 0) {
+            sum += number
+        }
+    }
+
+    println("Sum of natural numbers below $maximumNumber that are multiples of $firstMultiple and $secondMultiple is $sum.")
 }
