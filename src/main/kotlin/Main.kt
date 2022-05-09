@@ -1,18 +1,20 @@
-fun main(args: Array<String>) {
+import java.math.BigInteger
+
+fun main() {
     print("Enter the first multiple: ")
-    var firstMultiple: Int = readln().toInt()
+    val firstMultiple: Int = readln().toInt()
 
     print("Enter the second multiple: ")
-    var secondMultiple: Int = readln().toInt()
+    val secondMultiple: Int = readln().toInt()
 
     print("Enter the maximum number to check: ")
-    var maximumNumber: Int = readln().toInt()
+    val maximumNumber: Int = readln().toInt()
 
-    var sum = 0
+    var sum = BigInteger.ZERO
 
     for (number in 1 until maximumNumber) {
         if (number % firstMultiple == 0 || number % secondMultiple == 0) {
-            sum += number
+            sum = sum.add(BigInteger.valueOf(number.toLong()))
         }
     }
 
